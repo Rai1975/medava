@@ -1,6 +1,6 @@
 package edu.uc.cs3003.medava;
 
-public class Medicine {
+public abstract class Medicine {
     private String mMedicineName;
 
     // Constructor for medicine class
@@ -22,6 +22,9 @@ public class Medicine {
     public double maximumTemperature() {
         return 100.0;
     }
+
+    // Pure virtual function (abstract method) for schedules
+    public abstract MedicineSchedule getSchedule();
 
     // Function to check if temperature is in a valid range
     public boolean isTemperatureRangeAcceptable(Double lowTempaerature, Double highTermparature) {
