@@ -14,12 +14,12 @@ public class Medicine {
     }
 
     // Defining minimum temperature virtual method
-    public Double minimumTemperature() {
+    public double minimumTemperature() {
         return 0.0;
     }
 
     // Defining maximum temperature virtual method
-    public Double maximumTemperature() {
+    public double maximumTemperature() {
         return 100.0;
     }
 
