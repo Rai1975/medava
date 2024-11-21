@@ -1,5 +1,9 @@
 package edu.uc.cs3003.medava;
 
+// Importing packages for reflection mechanism
+// import java.lang.reflect.InvocationTargetException;
+// import java.lang.reflect.Method;
+
 // Importing java list types
 import java.util.List;
 import java.util.ArrayList;
@@ -11,10 +15,10 @@ public class Transporter {
     private double mLowTemperature, mHighTemperature;
 
     // Define list of medicine to be stored in class
-    public List<Medicine> goods;
+    public List<Shippable> goods;
 
     {
-        goods = new ArrayList<Medicine>();
+        goods = new ArrayList<Shippable>();
     }
 
     // Constructor for Transporter class
@@ -25,17 +29,31 @@ public class Transporter {
     }
 
     // Function to load medicine into the transporter
-    public boolean load(Medicine itemToLoad) {
+    public boolean load(Shippable itemToLoad) {
         if (itemToLoad.isTemperatureRangeAcceptable(mLowTemperature, mHighTemperature)) {
-            System.out.println(String.format("Adding a %s to the transporter.", itemToLoad.getMedicineName()));
-            goods.add(itemToLoad);
-            return true;
+            return goods.add(itemToLoad);
         }
         return false;
     }
 
+    // public boolean load (Object itemToLoad) {
+        // try {
+        //     Method isTemperatureRangeAcceptableMethod = itemToLoad.getClass().getMethod("isTemperatureRangeAcceptable",
+        //             Double.class, Double.class);
+        //     boolean resultOfMethodCall = (boolean) isTemperatureRangeAcceptableMethod.invoke(itemToLoad,
+        //             Double.valueOf(mLowTemperature), Double.valueOf(mHighTemperature));
+        //     if (resultOfMethodCall) {
+        //         goods.add(itemToLoad);
+        //     }
+        //     return resultOfMethodCall;
+        // } catch (NoSuchMethodException | SecurityException | IllegalAccessException | IllegalArgumentException
+        //         | InvocationTargetException e) {
+        //     return false;
+        // }
+    // }
+
     // Function to unload medicine from the transporter
-    public Medicine unload() {
+    public Shippable unload() {
         return goods.remove(0);
     }
 

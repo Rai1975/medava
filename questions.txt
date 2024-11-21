@@ -1,1 +1,13 @@
 Your questions here.
+
+1. Is there any reason for putting an 'm' before every variable name here, or is it purely preference?
+
+2. In Java, when we define a variable to have a `new` type, is it similar to a pointer in C++?
+
+3. If we pass a double into `MedicineSchedule(int schedule)`, would Java convert the double to an integer like python?
+
+4. Is the `Object` class in Java like a metaclass?
+
+5. Is there a way to find out what class an Object is? (Found out in the next step)
+
+6. Is an interface similar to a schema?
